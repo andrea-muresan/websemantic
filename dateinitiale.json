@@ -1,0 +1,57 @@
+{
+  "reports": [
+    {
+      "id": 1,
+      "crimeType": "Theft",
+      "incidentDate": "2026-04-20",
+      "description": "Someone stole shiny diamonds last night.",
+      "city": "NYC"
+    },
+    {
+      "id": 2,
+      "crimeType": "Murder",
+      "incidentDate": "2026-05-24",
+      "description": "Two angry guys started a fight. One got stabbed",
+      "city": "LA"
+    },
+    {
+      "id": 3,
+      "crimeType": "Murder",
+      "incidentDate": "2026-05-25",
+      "description": "A mysterious villain did a murder.",
+      "city": "Arkham"
+    }
+  ],
+  "evidence": [
+    {
+      "id": 1,
+      "reportId": 1,
+      "evidenceType": "Fingerprint",
+      "description": "Messy smudge on the window glass."
+    },
+    {
+      "id": 2,
+      "reportId": 1,
+      "evidenceType": "Video Footage",
+      "description": "Blurry video of a running man."
+    },
+    {
+      "id": 3,
+      "reportId": 2,
+      "evidenceType": "Video Footage",
+      "description": "Camera caught the whole silly argument."
+    },
+    {
+      "id": 4,
+      "reportId": 3,
+      "evidenceType": "Fingerprint",
+      "description": "Bloody glove print left behind."
+    },
+    {
+      "reportId": 2,
+      "evidenceType": "DNA Sample",
+      "description": "Hair sample found on the carpet.",
+      "id": 5
+    }
+  ]
+}

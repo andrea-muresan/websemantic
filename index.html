@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { background-color: whitesmoke; }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            background-color: rgb(229, 206, 177);
+        }
+        .input-row { display: flex; gap: 10px; margin-bottom: 20px; }
+        input { flex: 1; padding: 8px; }
+        .error { color: red; font-size: 0.9em; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Server</h1>
+        <div class="input-row">
+            <input type="text" id="userInput" placeholder="Ask about crime/ books/cartoons...">
+            <button id="sendBtn" onclick="send()">Send</button>
+        </div>
+        <div>Answer:</div>
+        <div id="output">...</div>
+        <div id="errorBox" class="error"></div>
+    </div>
+
+    <script>
+        async function send() {
+            const input = document.getElementById('userInput').value.trim();
+            const output = document.getElementById('output');
+            const errorBox = document.getElementById('errorBox');
+            const btn = document.getElementById('sendBtn');
+
+            if (!input) {
+                errorBox.innerText = "Enter something";
+                return;
+            }
+
+            errorBox.innerText = "";
+            output.innerText = "Loading...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('http://localhost:5000/api', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: input })
+                });
+
+                if (!res.ok) throw new Error("Eror: " + res.status);
+
+                const data = await res.json();
+                output.innerText = data.reply;
+            } catch (err) {
+                errorBox.innerText = "Error: Cannot conect to the server";
+                output.innerText = "...";
+            } finally {
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

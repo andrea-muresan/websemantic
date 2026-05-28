@@ -1,0 +1,66 @@
+@prefix : <https://github.com/andrea-muresan#> .
+@prefix s: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+
+:SarahJMaas a s:Person;
+  s:name "Sarah J. Maas";
+  s:birthDate "1986-03-05"^^xsd:date;
+  s:sameAs <https://sarahjmaas.com/> .
+
+:StephanieGarber a s:Person;
+  s:name "Stephanie Garber";
+  s:birthDate "1981-04-13"^^xsd:date;
+  s:sameAs <https://www.goodreads.com/author/show/14137787.Stephanie_Garber> .
+
+:RebeccaYarros a s:Person;
+  s:name "Rebecca Yarros";
+  s:birthDate "1981-04-14"^^xsd:date;
+  s:sameAs <https://rebeccayarros.com/> .
+
+:A_Court_of_Thorns_and_Roses a s:Book;
+  s:name "A Court of Thorns and Roses";
+  s:copyrightYear "2015"^^xsd:gYear;
+  s:numberOfPages 420;
+  s:author :SarahJMaas .
+
+:Throne_of_Glass a s:Book;
+  s:name "Throne of Glass";
+  s:copyrightYear "2012"^^xsd:gYear;
+  s:numberOfPages 405;
+  s:author :SarahJMaas .
+
+:Caraval a s:Book;
+  s:name "Caraval";
+  s:copyrightYear "2017"^^xsd:gYear;
+  s:numberOfPages 370;
+  s:author :StephanieGarber .
+
+:Fourth_Wing a s:Book;
+  s:name "Fourth Wing";
+  s:copyrightYear "2023"^^xsd:gYear;
+  s:numberOfPages 540;
+  s:author :RebeccaYarros .
+
+:Legendar a s:Book;
+  s:name "Legendary";
+  s:copyrightYear "2018"^^xsd:gYear;
+  s:numberOfPages 510;
+  s:author :StephanieGarber .
+
+:Iron_Flame a s:Book;
+  s:name "Iron Flame";
+  s:copyrightYear "2023"^^xsd:gYear;
+  s:numberOfPages 560;
+  s:author :RebeccaYarros .
+
+:Kingdom_of_Ash a s:Book;
+  s:name "Kingdom of Ash";
+  s:copyrightYear "2018"^^xsd:gYear;
+  s:numberOfPages 960;
+  s:author :SarahJMaas .
